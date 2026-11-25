@@ -1,0 +1,563 @@
+/* ==========================================================
+   TEMPLE OF PLANT — Tema: Templo da Floresta (Zelda: Ocarina of Time)
+   Sem gradientes, sem sombras 3D: só cores chapadas, bordas
+   grossas e molduras de pedra.
+   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Cinzel:wght@500;700;900&display=swap');
+
+:root {
+    /* Paleta do Templo da Floresta */
+    --noite: #0b150d;          /* fundo mais escuro */
+    --pedra: #14241a;          /* lajes de pedra */
+    --pedra-clara: #1d3324;
+    --musgo: #4f7a2f;
+    --folha: #7bd33c;          /* verde-lima do Medalhão da Floresta */
+    --medalhao: #2fa84f;
+    --ouro: #e8c547;           /* Triforce */
+    --ouro-escuro: #8a6d12;
+    --poe: #8d4fd1;            /* chama dos Poes */
+    --poe-claro: #cbb2ee;
+    --texto: #e6efd9;
+    --texto-suave: #a9bf9a;
+
+    /* COLE AQUI a URL de uma foto do templo, ex.: url("https://...") */
+    --foto-templo: none;
+
+    --titulo: 'Cinzel', 'Times New Roman', serif;
+    --corpo: 'Alegreya Sans', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Textura de tijolos de pedra (SVG embutido, traço chapado) */
+body {
+    margin: 0;
+    background-color: var(--noite);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48'%3E%3Cpath d='M0 1h96M0 25h96M1 0v24M49 24v24' fill='none' stroke='%23183020' stroke-width='2'/%3E%3C/svg%3E");
+    color: var(--texto);
+    font-family: var(--corpo);
+    font-size: 17px;
+}
+
+/* Camada opcional com foto, fixa ao fundo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--foto-templo);
+    background-size: cover;
+    background-position: center;
+    opacity: .22;
+}
+
+/* ---------- Topo ---------- */
+.topo {
+    max-width: 100%;
+    margin: 0;
+    padding: 18px max(22px, calc((100% - 1100px) / 2 + 22px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--noite);
+    border-bottom: 5px solid var(--ouro);
+    box-shadow: 0 5px 0 var(--medalhao);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--titulo);
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--ouro);
+}
+
+.selo {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--folha);
+    background-color: var(--medalhao);
+    color: var(--noite);
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selo::first-line {
+    line-height: 1;
+}
+
+.submarca {
+    font-family: var(--titulo);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--poe-claro);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+/* ---------- Introdução ---------- */
+.introducao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 60px 0 40px;
+}
+
+.texto-intro {
+    max-width: 600px;
+}
+
+.sobretitulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: var(--poe-claro);
+    font-family: var(--titulo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* chama de Poe */
+.sobretitulo::before {
+    content: "";
+    flex-shrink: 0;
+    width: 12px;
+    height: 16px;
+    background-color: var(--poe);
+    clip-path: polygon(50% 0, 100% 65%, 75% 100%, 25% 100%, 0 65%);
+}
+
+.introducao h1 {
+    font-family: var(--titulo);
+    font-size: clamp(38px, 6.4vw, 72px);
+    line-height: 1.05;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 18px 0;
+    color: var(--texto);
+}
+
+.introducao h1 em {
+    font-style: normal;
+    color: var(--folha);
+}
+
+.descricao {
+    max-width: 480px;
+    margin: 0;
+    padding-left: 16px;
+    border-left: 5px solid var(--ouro);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--texto-suave);
+}
+
+/* ---------- Emblema: Triforce dentro do Medalhão ---------- */
+.desenho {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.circulo {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circulo-um {
+    top: 10px;
+    left: 10px;
+    width: 230px;
+    height: 230px;
+    border: 8px solid var(--medalhao);
+    background-color: var(--noite);
+}
+
+.circulo-dois {
+    top: 35px;
+    left: 35px;
+    width: 180px;
+    height: 180px;
+    border: 3px dashed var(--ouro);
+}
+
+.folha {
+    position: absolute;
+    width: 64px;
+    height: 56px;
+    background-color: var(--ouro);
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    transform: none;
+}
+
+/* Centro do emblema = 125px x 125px.
+   Triforce: largura 128px (61 a 189) e altura 112px.
+   Subida de 10px (compensação óptica): o peso visual dos triângulos
+   fica na base, então o centro geométrico exato parece "baixo".
+   Para ajustar, mude os três valores de top juntos. */
+.folha-um   { top: 59px;  left: 93px; }
+.folha-dois { top: 115px; left: 61px; }
+.folha-tres { top: 115px; left: 125px; }
+
+.vaso {
+    display: none;
+}
+
+.simbolo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--folha);
+    font-size: 30px;
+}
+
+/* ---------- Painel (laje de pedra com moldura dourada) ---------- */
+.painel {
+    position: relative;
+    max-width: 760px;
+    background-color: var(--pedra);
+    border: 5px solid var(--musgo);
+    outline: 3px solid var(--ouro);
+    outline-offset: -14px;
+    padding: 38px 34px;
+    margin: 15px 0 45px;
+}
+
+/* ornamentos dourados nos cantos */
+.painel::before,
+.painel::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: var(--ouro);
+    transform: rotate(45deg);
+}
+
+.painel::before { top: -16px;    left: -16px; }
+.painel::after  { bottom: -16px; right: -16px; }
+
+.painel-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+    border-bottom: 4px solid var(--musgo);
+}
+
+.painel h2 {
+    font-family: var(--titulo);
+    font-weight: 900;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ouro);
+    margin: 8px 0 0;
+}
+
+/* número em formato de rupia */
+.numero {
+    padding: 8px 18px;
+    background-color: var(--medalhao);
+    color: var(--noite);
+    font-family: var(--titulo);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0 50%);
+}
+
+/* ---------- Formulário ---------- */
+.campo {
+    margin: 26px 0;
+}
+
+.campo > label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--texto);
+}
+
+select {
+    width: 100%;
+    padding: 14px 46px 14px 14px;
+    background-color: var(--noite);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='14'%3E%3Cpath d='M0 0h20L10 14z' fill='%23e8c547'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    border: 3px solid var(--musgo);
+    border-radius: 0;
+    color: var(--texto);
+    font-family: var(--corpo);
+    font-size: 17px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+select:hover {
+    border-color: var(--folha);
+}
+
+.opcoes {
+    display: flex;
+    gap: 12px;
+}
+
+.opcao {
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+}
+
+.opcao input {
+    position: absolute;
+    opacity: 0;
+}
+
+.opcao span {
+    display: block;
+    padding: 14px;
+    text-align: center;
+    background-color: var(--noite);
+    border: 3px solid var(--musgo);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.opcao:hover span {
+    border-color: var(--folha);
+}
+
+.opcao input:checked + span {
+    background-color: var(--medalhao);
+    border-color: var(--ouro);
+    color: var(--noite);
+    font-weight: 700;
+}
+
+select:focus,
+button:focus,
+.opcao input:focus + span {
+    outline: 3px solid var(--ouro);
+    outline-offset: 3px;
+}
+
+button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 17px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 4px solid var(--ouro-escuro);
+    border-radius: 0;
+    background-color: var(--ouro);
+    color: var(--noite);
+    font-family: var(--titulo);
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--folha);
+    border-color: var(--musgo);
+}
+
+button:active {
+    background-color: var(--medalhao);
+}
+
+button span {
+    font-size: 24px;
+}
+
+/* ---------- Resultado (caixa de diálogo estilo Zelda) ---------- */
+.resultado {
+    margin-bottom: 45px;
+}
+
+.resultado .sobretitulo {
+    margin-bottom: 14px;
+    color: var(--folha);
+}
+
+.cartao-planta {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 28px;
+    padding: 28px;
+    background-color: var(--noite);
+    border: 6px double var(--ouro);
+    color: var(--texto);
+}
+
+.cartao-planta img {
+    width: 200px;
+    height: 230px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: 4px solid var(--musgo);
+}
+
+.cartao-planta h3 {
+    font-family: var(--titulo);
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: var(--ouro);
+    margin: 12px 0 8px;
+}
+
+/* etiqueta hexagonal */
+.tag {
+    display: inline-block;
+    padding: 6px 18px;
+    background-color: var(--poe);
+    color: #fff;
+    font-family: var(--titulo);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
+}
+
+.cartao-planta p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.cartao-planta strong {
+    color: var(--folha);
+}
+
+.detalhes {
+    color: var(--texto-suave);
+    font-size: 15px !important;
+    padding-top: 10px;
+    border-top: 3px solid var(--musgo);
+}
+
+.aviso {
+    color: var(--poe-claro);
+    font-size: 15px;
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 22px 0 34px;
+    border-top: 5px solid var(--ouro);
+    font-family: var(--titulo);
+    color: var(--musgo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+footer span:last-child {
+    color: var(--folha);
+}
+
+/* ---------- Celulares ---------- */
+@media (max-width: 650px) {
+    body {
+        font-size: 16px;
+    }
+
+    .topo {
+        padding: 16px 20px;
+    }
+
+    .submarca {
+        display: none;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    .introducao {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 36px 0 24px;
+        gap: 0;
+    }
+
+    .introducao h1 {
+        font-size: 38px;
+    }
+
+    .descricao {
+        font-size: 16px;
+    }
+
+    /* emblema menor e centralizado (a escala encolhe o espaço ocupado) */
+    .desenho {
+        align-self: center;
+        transform: scale(.7);
+        margin: -37px auto 0;
+    }
+
+    .painel {
+        padding: 30px 20px;
+        outline-offset: -10px;
+    }
+
+    .painel h2 {
+        font-size: 23px;
+    }
+
+    .opcoes {
+        gap: 8px;
+    }
+
+    .opcao span {
+        padding: 13px 8px;
+        font-size: 16px;
+    }
+
+    .cartao-planta {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .cartao-planta img {
+        height: 230px;
+    }
+
+    .cartao-planta h3 {
+        font-size: 26px;
+    }
+
+    footer {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+}
