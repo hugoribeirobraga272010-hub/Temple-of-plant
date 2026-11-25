@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple of Plant | Find a Plant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="marca"><span class="selo">▲</span><span>TEMPLE OF PLANT</span></div>
+    <span class="submarca">SACRED GROVE · FOREST TEMPLE</span>
+  </header>
+  <main>
+    <section class="introducao">
+      <div class="texto-intro">
+        <p class="sobretitulo">THE FOREST CALLS YOU</p>
+        <h1>Find the plant<br>that <em>fits your space.</em></h1>
+        <p class="descricao">Tell us about your space, your pets, and your routine. Temple of Plant will recommend a plant from our catalog.</p>
+      </div>
+      <div class="desenho" aria-hidden="true"><div class="circulo circulo-um"></div><div class="circulo circulo-dois"></div><div class="folha folha-um"></div><div class="folha folha-dois"></div><div class="folha folha-tres"></div><div class="vaso"></div></div>
+    </section>
+    <section class="painel">
+      <div class="painel-titulo"><div><p class="sobretitulo">CHOOSE YOUR PATH</p><h2>Plant Compatibility</h2></div><span class="numero">01 / 03</span></div>
+      <form id="formulario">
+        <div class="campo"><label for="luz">How much natural light does your space receive?</label><select id="luz" required><option value="">Select light level</option><option value="low">Low light — away from windows</option><option value="medium">Medium light — indirect sunlight</option><option value="bright">Bright light — plenty of indirect sunlight</option><option value="direct">Direct sunlight — sun rays reach the space</option></select></div>
+        <div class="campo"><label>Do you have pets?</label><div class="opcoes"><label class="opcao"><input type="radio" name="pets" value="yes" required><span>Yes</span></label><label class="opcao"><input type="radio" name="pets" value="no"><span>No</span></label></div></div>
+        <div class="campo"><label for="experiencia">How experienced are you with plants?</label><select id="experiencia"><option value="any">Any experience level</option><option value="beginner">I'm a beginner</option><option value="experienced">I'm experienced</option></select></div>
+        <div class="campo"><label for="umidade">Is your space usually humid or dry?</label><select id="umidade"><option value="any">Not sure / normal humidity</option><option value="humid">Humid</option><option value="dry">Dry</option></select></div>
+        <div class="campo"><label for="espaco">How much space do you have for a plant?</label><select id="espaco"><option value="any">Any size</option><option value="small">Small space / shelf</option><option value="large">Floor space / larger plant</option></select></div>
+        <div class="campo"><label for="temperatura">What is the usual temperature?</label><select id="temperatura"><option value="any">Normal room temperature</option><option value="warm">Usually warm</option><option value="cool">Usually cool</option></select></div>
+        <div class="campo"><label for="rega">How often would you prefer to water?</label><select id="rega"><option value="any">No preference</option><option value="low">Infrequently</option><option value="high">Frequently is fine</option></select></div>
+        <button type="submit">Find my plant <span>↗</span></button>
+      </form>
+    </section>
+    <section id="resultado" class="resultado" aria-live="polite"></section>
+    <footer><span>TEMPLE OF PLANT</span><span>MAY THE FOREST GUIDE YOU.</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

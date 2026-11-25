@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Cinzel:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0b150d;
+    color: #e6efd9;
+    font-family: 'Alegreya Sans', Arial, sans-serif;
+    font-size: 17px;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #14241a;
+    border-bottom: 3px solid #e8c547;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e8c547;
+    font-family: 'Cinzel', serif;
+}
+
+.selo {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2fa84f;
+    color: #e8c547;
+    transform: rotate(45deg);
+}
+
+.submarca {
+    color: #cbb2ee;
+    font-size: 12px;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.introducao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.texto-intro {
+    max-width: 600px;
+}
+
+.sobretitulo {
+    color: #cbb2ee;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+}
+
+h1 em {
+    color: #7bd33c;
+    font-style: normal;
+}
+
+.descricao {
+    color: #a9bf9a;
+    line-height: 1.6;
+}
+
+.desenho {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    margin: 20px;
+}
+
+.folha {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ffe878, #e8c547, #b38b20);
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    filter: drop-shadow(0 0 8px #e8c547);
+}
+
+.folha-um {
+    top: 10px;
+    left: 50px;
+}
+
+.folha-dois {
+    top: 80px;
+    left: 10px;
+}
+
+.folha-tres {
+    top: 80px;
+    left: 90px;
+}
+
+.vaso {
+    display: none;
+}
+
+.painel {
+    max-width: 760px;
+    margin: 20px 0 40px;
+    padding: 30px;
+    background: #14241a;
+    border: 3px solid #4f7a2f;
+}
+
+.painel-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #4f7a2f;
+    margin-bottom: 20px;
+}
+
+.painel h2 {
+    color: #e8c547;
+    font-family: 'Cinzel', serif;
+}
+
+.numero {
+    padding: 8px;
+    background: #2fa84f;
+    color: #0b150d;
+}
+
+.campo {
+    margin: 25px 0;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    background: #0b150d;
+    border: 2px solid #4f7a2f;
+    color: #e6efd9;
+}
+
+.opcoes {
+    display: flex;
+    gap: 10px;
+}
+
+.opcao {
+    flex: 1;
+    cursor: pointer;
+}
+
+.opcao input {
+    position: absolute;
+    opacity: 0;
+}
+
+.opcao span {
+    display: block;
+    padding: 12px;
+    text-align: center;
+    background: #0b150d;
+    border: 2px solid #4f7a2f;
+}
+
+.opcao input:checked + span {
+    background: #2fa84f;
+    color: #0b150d;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background: #e8c547;
+    border: none;
+    color: #0b150d;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #7bd33c;
+}
+
+.resultado {
+    margin-bottom: 40px;
+}
+
+.cartao-planta {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    padding: 20px;
+    background: #14241a;
+    border: 2px solid #e8c547;
+}
+
+.cartao-planta img {
+    width: 200px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.cartao-planta h3 {
+    color: #e8c547;
+    font-family: 'Cinzel', serif;
+}
+
+.tag {
+    padding: 5px 10px;
+    background: #8d4fd1;
+    color: white;
+    font-size: 12px;
+}
+
+.cartao-planta p {
+    line-height: 1.6;
+}
+
+.cartao-planta strong {
+    color: #7bd33c;
+}
+
+.detalhes {
+    color: #a9bf9a;
+}
+
+.aviso {
+    color: #cbb2ee;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 2px solid #e8c547;
+    color: #7bd33c;
+    font-size: 12px;
+}
+
+@media (max-width: 650px) {
+    .submarca {
+        display: none;
+    }
+
+    .introducao {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .desenho {
+        align-self: center;
+    }
+
+    .painel {
+        padding: 20px;
+    }
+
+    .opcoes {
+        flex-direction: column;
+    }
+
+    .cartao-planta {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-planta img {
+        width: 100%;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
